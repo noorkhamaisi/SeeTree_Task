@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 COPY . .
-CMD ["python","/Webpage/SeeTree-task.py"]
+CMD ["python","/Webpage/main_seetree.py"]
