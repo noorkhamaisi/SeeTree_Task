@@ -87,7 +87,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
 
     
     if FUNC_NAME =='min': 
-        func_describtion ="This function calculates the Min value of the pixels in the image."
+        func_describtion ="This function calculates the Minimum value of the pixels in the image."
         min_value=imgstatistics.Min_value(gray_image) 
        # elapsed_time = time.time() - start_time
       #  print("elapsed time: "+str(elapsed_time))
@@ -98,7 +98,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     
     
     elif FUNC_NAME =='max':
-        func_describtion = "This function calculates the Max value of the pixels in the image."
+        func_describtion = "This function calculates the Maximum value of the pixels in the image."
         max_value=imgstatistics.Max_value(gray_image)
        # elapsed_time = time.time() - start_time
       #  print("elapsed time: "+str(elapsed_time))
