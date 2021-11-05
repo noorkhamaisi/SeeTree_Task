@@ -145,7 +145,7 @@ while the percntile function is computed by the percntile function in numpy libr
    
 
 ##  Multiple identical requests
-If we have a multiple identical requests (same image and same function) I can make it more efficient,
+If we have a multiple identical requests (same image and same function) I make it more efficient,
 by saving a Dictionary that stores all the previous supported requests . so 
 when the user request a supported service (after checking IMG_FILE_NAME  and FUNC_NAMES ) I check first if the specific image and function are stored in my Dictionary ; if so I return the stored data without the need to calculate it  again. 
 
