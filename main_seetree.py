@@ -67,7 +67,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     if IMAGE_FILE_NAME in multipleRequestsDict.keys():
         if FUNC_NAME in multipleRequestsDict[IMAGE_FILE_NAME].keys():
          #   elapsed_time = time.time() - start_time
-          #  print("from the dict: "+str(elapsed_time))
+          #  print("multuply request: "+str(elapsed_time))
             return render_template('statistics_result.html',func=FUNC_NAME,img_url=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["img_url"],img_name=IMAGE_FILE_NAME, value=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["value"],describtion=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["describtion"])
 
 
@@ -88,7 +88,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         func_describtion ="This function calculates the Min value of the pixels in the image."
         min_value=imgstatistics.Min_value(gray_image) 
        # elapsed_time = time.time() - start_time
-      #  print("regular time: "+str(elapsed_time))
+      #  print("elapsed time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,min_value,func_describtion)
 
         return render_template('statistics_result.html',func=FUNC_NAME,img_url=URL,img_name=IMAGE_FILE_NAME, value=min_value,describtion=func_describtion)
@@ -98,7 +98,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         func_describtion = "This function calculates the Max value of the pixels in the image."
         max_value=imgstatistics.Max_value(gray_image)
        # elapsed_time = time.time() - start_time
-      #  print("regular time: "+str(elapsed_time))
+      #  print("elapsed time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,max_value,func_describtion)
         
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=max_value,describtion=func_describtion)
@@ -107,7 +107,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         func_describtion = "This function calculates the Mean of the pixels level in the image."
         Mean_value=imgstatistics.Mean_value(gray_image)
       #  elapsed_time = time.time() - start_time
-      #  print("regular time: "+str(elapsed_time))
+      #  print("elapsed time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Mean_value,func_describtion)
 
        
@@ -117,7 +117,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         func_describtion = "This function calculates the Median pixel level in the image."
         Median_value=imgstatistics.Median_value(gray_image)
        # elapsed_time = time.time() - start_time
-       # print("regular time: "+str(elapsed_time))
+       # print("elapsed time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Median_value,func_describtion)
 
         
@@ -128,7 +128,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
             func_describtion = "This function calculates the n'th Percentile of the image."
             percentile=imgstatistics.percentile_value(gray_image,int(FUNC_NAME[1:]))
         #    elapsed_time = time.time() - start_time
-         #   print("regular time: "+str(elapsed_time))
+         #   print("elapsed time: "+str(elapsed_time))
             
             FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,percentile,func_describtion)
 
