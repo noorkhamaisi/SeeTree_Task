@@ -48,7 +48,7 @@ docker build -t imagestatistics .
 
 
 `
-Running the conatiner and on port:5000
+Running the conatiner on port:5000
 `
 ```bash
 docker run -d -p 5000:5000 imagestatistics
