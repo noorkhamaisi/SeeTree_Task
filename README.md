@@ -100,7 +100,9 @@ returns Median pixel level in the image.
 For example p10 is the 10th percentile of the image, p99 is the 99th percentile
 returns a value that a certain percentage of a set of values (p%) is lower than it.     
 
+For more details , you can visit the following link : 
 
+https://pillow.readthedocs.io/en/stable/reference/ImageStat.html 
 
 
 ## Implementation
@@ -109,7 +111,7 @@ therefore , i calculate every function from the supported , on the given graysca
 the mean function for example calculates the Average (arithmetic mean) pixel level for each chanel in the image. so i deciced to compute the mean of the grayscale image to get the mean value for the whole image . 
 the supported functions is calculated using pillow library in python 
 https://pillow.readthedocs.io/en/stable/reference/ImageStat.html 
- while the percntile function is computed by the percntile function in numpy library 
+while the percntile function is computed by the percntile function in numpy library 
 
 
 * For each function from the supported i return html file with the  matching result , for example : 
