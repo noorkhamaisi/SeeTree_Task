@@ -22,7 +22,7 @@ multipleRequestsDict={}
 
 
 #### https://stackoverflow.com/questions/10543940/check-if-a-url-to-an-image-is-up-and-exists-in-python
-#check if a URL of an image is up and exists in the bucket
+#checking if a URL of an image is up and exists in the bucket
 def is_url_image(image_url):
    image_formats = ("image/png", "image/jpeg", "image/jpg")
    r = requests.head(image_url)
@@ -47,11 +47,12 @@ def not_found(e):
   return render_template("404.html")
 
 
+## The homePage template 
 @app.route('/', methods=['GET'])
 def HomePage():
     return render_template('home.html')
 
-
+## The health template 
 @app.route('/health',methods=['GET'])
 def health():
     return render_template('health.html')
@@ -63,7 +64,8 @@ def health():
 def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     
   #  start_time = time.time()
-
+      
+      ##checking if IMAGE_FILE_NAME and FUNC_NAME already exists in the dict ,(multiple identical requests)
     if IMAGE_FILE_NAME in multipleRequestsDict.keys():
         if FUNC_NAME in multipleRequestsDict[IMAGE_FILE_NAME].keys():
          #   elapsed_time = time.time() - start_time
@@ -89,6 +91,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         min_value=imgstatistics.Min_value(gray_image) 
        # elapsed_time = time.time() - start_time
       #  print("elapsed time: "+str(elapsed_time))
+          ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,min_value,func_describtion)
 
         return render_template('statistics_result.html',func=FUNC_NAME,img_url=URL,img_name=IMAGE_FILE_NAME, value=min_value,describtion=func_describtion)
@@ -99,6 +102,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         max_value=imgstatistics.Max_value(gray_image)
        # elapsed_time = time.time() - start_time
       #  print("elapsed time: "+str(elapsed_time))
+        ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,max_value,func_describtion)
         
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=max_value,describtion=func_describtion)
@@ -108,6 +112,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         Mean_value=imgstatistics.Mean_value(gray_image)
       #  elapsed_time = time.time() - start_time
       #  print("elapsed time: "+str(elapsed_time))
+        ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Mean_value,func_describtion)
 
        
@@ -118,6 +123,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         Median_value=imgstatistics.Median_value(gray_image)
        # elapsed_time = time.time() - start_time
        # print("elapsed time: "+str(elapsed_time))
+        ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Median_value,func_describtion)
 
         
@@ -129,7 +135,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
             percentile=imgstatistics.percentile_value(gray_image,int(FUNC_NAME[1:]))
         #    elapsed_time = time.time() - start_time
          #   print("elapsed time: "+str(elapsed_time))
-            
+            ## Filling the dict for multiple identical requests
             FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,percentile,func_describtion)
 
             return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=percentile,describtion=func_describtion)
@@ -138,7 +144,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         else:                                                
             return render_template('funcerror_404.html')     
 
-    else:  # The Function doesn't exists
+    else:  # The Function isnt supported
          return render_template('funcerror_404.html')
 
     

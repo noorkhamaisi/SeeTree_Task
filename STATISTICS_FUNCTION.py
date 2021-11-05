@@ -14,12 +14,14 @@ from PIL import ImageStat
 
 #Returnning the MAX value of the image 
 def Max_value(img): 
+    ##This relies on the histogram() method, and simply returns the low and high bins used.
     min_max = ImageStat.Stat(img).extrema 
     max_value=min_max[0][1]
     return max_value
     
  #Returnning the MIN value of the image 
 def Min_value(img): 
+    ##This relies on the histogram() method, and simply returns the low and high bins used.
     min_max = ImageStat.Stat(img).extrema 
     min_value=min_max[0][0]
     return min_value
@@ -43,7 +45,7 @@ def Median_value(img):
 #Returnning the N'th percentile of the image 
 def percentile_value(img,p):
     
-    # converting PIL image to NumPy array
+    # converting PIL image to Numpy array
     converttonumpy = np.asarray(img) 
     # Calculating the  N'th percentile of the image
     percentile= np.percentile(converttonumpy,p) 
