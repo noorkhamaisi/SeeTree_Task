@@ -6,11 +6,11 @@ Created on Thu Nov  4 16:26:55 2021
 """
 
 
-import requests
+import STATISTICS_FUNCTION as imgstatistics
 from flask import Flask,render_template
 from PIL import Image,ImageOps
-import STATICS_FUNCTION as imgstat
-import time
+import requests
+#import time
 
 
 
@@ -68,7 +68,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         if FUNC_NAME in multipleRequestsDict[IMAGE_FILE_NAME].keys():
          #   elapsed_time = time.time() - start_time
           #  print("from the dict: "+str(elapsed_time))
-            return render_template('stats.html',func=FUNC_NAME,img_url=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["img_url"],img_name=IMAGE_FILE_NAME, value=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["value"],describtion=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["describtion"])
+            return render_template('statistics_result.html',func=FUNC_NAME,img_url=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["img_url"],img_name=IMAGE_FILE_NAME, value=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["value"],describtion=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["describtion"])
 
 
 
@@ -86,53 +86,53 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     
     if FUNC_NAME =='min': 
         func_describtion ="This function calculates the Min value of the pixels in the image."
-        min_val=imgstat.STATICS_FUNCTION.Min_value(imgstat,gray_image) 
+        min_value=imgstatistics.Min_value(gray_image) 
        # elapsed_time = time.time() - start_time
       #  print("regular time: "+str(elapsed_time))
-        FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,min_val,func_describtion)
+        FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,min_value,func_describtion)
 
-        return render_template('stats.html',func=FUNC_NAME,img_url=URL,img_name=IMAGE_FILE_NAME, value=min_val,describtion=func_describtion)
+        return render_template('statistics_result.html',func=FUNC_NAME,img_url=URL,img_name=IMAGE_FILE_NAME, value=min_value,describtion=func_describtion)
     
     
     elif FUNC_NAME =='max':
         func_describtion = "This function calculates the Max value of the pixels in the image."
-        max_val=imgstat.STATICS_FUNCTION.Max_value(imgstat,gray_image)
+        max_value=imgstatistics.Max_value(gray_image)
        # elapsed_time = time.time() - start_time
       #  print("regular time: "+str(elapsed_time))
-        FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,max_val,func_describtion)
+        FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,max_value,func_describtion)
         
-        return render_template('stats.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=max_val,describtion=func_describtion)
+        return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=max_value,describtion=func_describtion)
 
     elif FUNC_NAME =='mean':
-        func_describtion = "This function calculates the Average pixel level in the image."
-        Mean_value=imgstat.STATICS_FUNCTION.Mean_value(imgstat,gray_image)
+        func_describtion = "This function calculates the Mean of the pixels level in the image."
+        Mean_value=imgstatistics.Mean_value(gray_image)
       #  elapsed_time = time.time() - start_time
       #  print("regular time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Mean_value,func_describtion)
 
        
-        return render_template('stats.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Mean_value,describtion=func_describtion)
+        return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Mean_value,describtion=func_describtion)
 
     elif FUNC_NAME =='median':
         func_describtion = "This function calculates the Median pixel level in the image."
-        Median_value=imgstat.STATICS_FUNCTION.Median_value(imgstat,gray_image)
+        Median_value=imgstatistics.Median_value(gray_image)
        # elapsed_time = time.time() - start_time
        # print("regular time: "+str(elapsed_time))
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Median_value,func_describtion)
 
         
-        return render_template('stats.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Median_value,describtion=func_describtion)
+        return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Median_value,describtion=func_describtion)
 
     elif FUNC_NAME[0]=='p' and FUNC_NAME[1:].isnumeric():
         if int(FUNC_NAME[1:])>=0 and int(FUNC_NAME[1:])<=100:
             func_describtion = "This function calculates the n'th Percentile of the image."
-            percentile=imgstat.STATICS_FUNCTION.percentile_value(imgstat,gray_image,int(FUNC_NAME[1:]))
+            percentile=imgstatistics.percentile_value(gray_image,int(FUNC_NAME[1:]))
         #    elapsed_time = time.time() - start_time
          #   print("regular time: "+str(elapsed_time))
             
             FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,percentile,func_describtion)
 
-            return render_template('stats.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=percentile,describtion=func_describtion)
+            return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=percentile,describtion=func_describtion)
 
         # The percentile must be between 0..100 
         else:                                                
