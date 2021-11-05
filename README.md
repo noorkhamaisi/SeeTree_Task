@@ -13,7 +13,7 @@ In this assignment we implemented a Flask webserver that handles calculation of 
 ## Installatin and Setup
 Open the Command Prompt and Clone the reposotory using the following command 
 ```bash
-https://github.com/noorkhamaisi/SeeTree_Task.git
+git clone https://github.com/noorkhamaisi/SeeTree_Task.git
 ```
 
 ## Running localy using Flask
