@@ -133,9 +133,10 @@ https://pillow.readthedocs.io/en/stable/reference/ImageStat.html
 
    
 
-## multiple identical requests
-in case of multiple identical requests (same image and same function) we can make it more efficient
-by providing a Hash table (or DB) that stores each legal request by the user in it. so whenever the user request some request from the server we check first if the specific image and function are stored in the hash table; if so we return the stored data without the need to calculate it all over again. (in other words- caching like) 
+##  Multiple identical requests
+If we have a multiple identical requests (same image and same function) I can make it more efficient,
+by saving a Dictionary that stores all the previous supported requests . so 
+when the user request a supported service (after checking IMG_FILE_NAME  and FUNC_NAMES ) I check first if the specific image and function are stored in my Dictionary ; if so I return the stored data without the need to calculate it  again. 
 
 
 
