@@ -110,14 +110,16 @@ https://pillow.readthedocs.io/en/stable/reference/ImageStat.html
 
 
 * For each function from the supported i return html file with the  matching result , for example : 
-![result.PNG](/images/result.PNG)
+
+<img src="images/result.PNG" width="500" height="300" alt="some_text">
 
 * If the function name is wrong - i have implemented a special 404 error handler , for example :
-![functionerror.PNG](/images/functionerror.PNG)
+
+<img src="images/functionerror.PNG" width="500" height="300" alt="some_text">
 
 * If the image name is wrong - i have implemented a special 404 error handler , for example : 
-![imageerror.PNG](/images/imageerror.PNG )
 
+<img src="images/imageerror.PNG" width="500" height="300" alt="some_text">
 
 
 * If the path is wrong and we have unspported URL we have 404 error unfound page
