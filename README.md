@@ -116,10 +116,14 @@ https://pillow.readthedocs.io/en/stable/reference/ImageStat.html
 ![functionerror.PNG](/images/functionerror.PNG)
 
 * If the image name is wrong - i have implemented a special 404 error handler , for example : 
-![imageerror.PNG](/images/imageerror.PNG)
+![imageerror.PNG](/images/imageerror.PNG )
 
-* If the path is wrong and we have unspported URL we have 404 error unfound page      
-![pagenotfound](/images/404error.PNG)                                                                                                                                                       
+
+
+* If the path is wrong and we have unspported URL we have 404 error unfound page
+
+<img src="images/404error.PNG" width="500" height="300" alt="some_text">      
+                                                                                                                                                      
 
 ## Examples
 1. Requests to /stats/IMG_1.jpg/min responds with the correct min value in the
