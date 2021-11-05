@@ -114,15 +114,15 @@ https://pillow.readthedocs.io/en/stable/reference/ImageStat.html
 while the percntile function is computed by the percntile function in numpy library 
 
 
-* For each function from the supported i return html file with the  matching result , for example : 
+* For each function from the supported i return html file with the  matching result using render_template in flask library  , for example : 
 
 <img src="images/result.PNG" width="500" height="300" alt="some_text">
 
-* If the function name is wrong - i have implemented a special 404 error handler , for example :
+* If the function name is wrong , i have implemented a special 404 error handler , for example :
 
 <img src="images/functionerror.PNG" width="500" height="300" alt="some_text">
 
-* If the image name is wrong - i have implemented a special 404 error handler , for example : 
+* If the image name is wrong , i have implemented a special 404 error handler , for example : 
 
 <img src="images/imageerror.PNG" width="500" height="300" alt="some_text">
 
