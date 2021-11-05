@@ -28,7 +28,7 @@ set FLASK_APP=main_seetree.py
 python -m flask run 
 ```
 
-Finally go to  https://127.0.0.0:5000 on your browser and strat your navigation . 
+Finally go to  https://127.0.0.1:5000 on your browser and strat your navigation . 
 
 ## Running localy using Dockerfile
 
@@ -50,7 +50,7 @@ Running the conatiner and on port:5000
 ```bash
 docker run -d -p 5000:5000 imagestatistics
 ```
-Finally go to  https://127.0.0.0:5000 on your browser and strat your navigation . 
+Finally go to  https://127.0.0.1:5000 on your browser and strat your navigation . 
 
 ## pulling the conatiner from dockerhub and running localy
 
@@ -69,7 +69,7 @@ running the image
 docker run -d -p 5000:5000 noorkhamaisi/imagestatistics:V0.1
 ```
 
-Finally go to  https://127.0.0.0:5000 on your browser and strat your navigation .
+Finally go to  https://127.0.0.1:5000 on your browser and strat your navigation .
 
 ## Supported URLs
 you can use those urls:
