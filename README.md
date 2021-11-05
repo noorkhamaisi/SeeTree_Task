@@ -110,16 +110,16 @@ https://pillow.readthedocs.io/en/stable/reference/ImageStat.html
 
 
 * For each function from the supported i return html file with the  matching result , for example : 
-![C:\Users\get-a\Desktop\DevOpsCourse\SeeTree_Task\images\result.PNG](C:\Users\get-a\Desktop\DevOpsCourse\SeeTree_Task\images\result.PNG)
+![result.PNG](/images/result.PNG)
 
-* If the function name is wrong - i have implemented a special 404 error handler , for example "
-![functionerror](..\images\functionerror.PNG)
+* If the function name is wrong - i have implemented a special 404 error handler , for example :
+![functionerror.PNG](/images/functionerror.PNG)
 
 * If the image name is wrong - i have implemented a special 404 error handler , for example : 
-![imageerror.PNG](..\images\imageerror.PNG)
+![imageerror.PNG](/images/imageerror.PNG)
 
 * If the path is wrong and we have unspported URL we have 404 error unfound page      
-![pagenotfound](..\images\404error.PNG)                                                                                                                                                       
+![pagenotfound](/images/404error.PNG)                                                                                                                                                       
 
 ## Examples
 1. Requests to /stats/IMG_1.jpg/min responds with the correct min value in the
