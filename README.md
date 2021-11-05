@@ -101,19 +101,25 @@ returns a value that a certain percentage of a set of values (p%) is lower than 
 
 
 ## Implementation
-* For each function i chose to return html rather than Json for user comfort so he can have much more fun! 
+* Because our images are in RGB format, so each image compose of three chanels - red ,green,blue .
+therefore , i calculate every function from the supported , on the given grayscale image (the RGB image converted to grayscale) and not on the RGB image itself.
+the mean function for example calculates the Average (arithmetic mean) pixel level for each chanel in the image. so i deciced to compute the mean of the grayscale image to get the mean value for the whole image . 
+the supported functions is calculated using pillow library in python 
+https://pillow.readthedocs.io/en/stable/reference/ImageStat.html 
+ while the percntile function is computed by the percntile function in numpy library 
 
-* I calculated each function on the given image grayscale and not on the image itself, and that due to the     RGB image Composition; each RGB image has three channels: red, green, and blue . the function (min for example) relies on the histogram for each channel and computes the min value for each channel; but in the
-assignment we asked to return the min value of the whole image, therefore i chose to work on the grayscale image.
-also for the percentile function i didn't see meaning of working on the RGB image because the function returns 
-the percntile according to comparition with other pixles values in one channel so it needs to be grayscale image!
 
-* I have implemented my own error 404 handler,each for different purpose:                                     
-1- if the image name is not exists on the server.                                                              
-2- if the function name is wrong.                                                                            
-3- if the url is not supported.                                                                               
+* For each function from the supported i return html file with the  matching result , for example : 
+![C:\Users\get-a\Desktop\DevOpsCourse\SeeTree_Task\images\result.PNG](C:\Users\get-a\Desktop\DevOpsCourse\SeeTree_Task\images\result.PNG)
 
-* I wrapped everything in Class.
+* If the function name is wrong - i have implemented a special 404 error handler , for example "
+![functionerror](..\images\functionerror.PNG)
+
+* If the image name is wrong - i have implemented a special 404 error handler , for example : 
+![imageerror.PNG](..\images\imageerror.PNG)
+
+* If the path is wrong and we have unspported URL we have 404 error unfound page      
+![pagenotfound](..\images\404error.PNG)                                                                                                                                                       
 
 ## Examples
 1. Requests to /stats/IMG_1.jpg/min responds with the correct min value in the
