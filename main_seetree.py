@@ -129,6 +129,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
         
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Median_value,describtion=func_describtion)
 
+    ## checking pXXX where XXX is a percentile between 0...100
     elif FUNC_NAME[0]=='p' and FUNC_NAME[1:].isnumeric():
         if int(FUNC_NAME[1:])>=0 and int(FUNC_NAME[1:])<=100:
             func_describtion = "This function calculates the n'th Percentile of the image."
