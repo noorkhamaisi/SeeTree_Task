@@ -42,7 +42,7 @@ def FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,value,describtion):
 
 
 @app.errorhandler(404)   
-# inbuilt function which takes error as parameter to handle paths error
+# function that handles paths error
 def not_found(e):  
   return render_template("404.html")
 
