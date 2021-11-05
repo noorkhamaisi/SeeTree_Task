@@ -76,7 +76,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     URL = 'https://storage.googleapis.com/seetree-demo-open/{}'.format(IMAGE_FILE_NAME) 
     #Chicking if the image exists 
     if not is_url_image(URL):          
-        return render_template('imgerror_404.html'),404 
+        return render_template('imgerror_404.html')
 
     #### https://stackoverflow.com/questions/12020657/how-do-i-open-an-image-from-the-internet-in-pil
     myimage=Image.open(requests.get(URL, stream=True).raw)
@@ -136,10 +136,10 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
 
         # The percentile must be between 0..100 
         else:                                                
-            return render_template('funcerror_404.html'),404     
+            return render_template('funcerror_404.html')     
 
     else:  # The Function doesn't exists
-         return render_template('funcerror_404.html'),404
+         return render_template('funcerror_404.html')
 
     
 
