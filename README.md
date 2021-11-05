@@ -18,6 +18,7 @@ git clone https://github.com/noorkhamaisi/SeeTree_Task.git
 
 ## Running localy using Flask
 Open the Command Prompt and make sure that you are in the SeeTree_Task folder .
+
 To start the webserver, run the following commands :
 ```bash
 py -m pip install -r requirements.txt
@@ -34,6 +35,7 @@ Finally go to  https://127.0.0.1:5000 on your browser and strat your navigation 
 ## Running localy using Dockerfile
 
 Open the Command Prompt and make sure that you are in the SeeTree_Task folder .
+
  To start the webserver,Please run the following commands :
   
 
