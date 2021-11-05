@@ -1,7 +1,8 @@
 # Seetree Junior SW engineer task
 
 Hello , and welcome to my Webserver that handles calculation of image statistics.
-In this assignment we implemented a Flask webserver that handles calculation of image statistics. For a given image we calculate the : min,max,mean,median and percentile values.
+
+In this assignment we implemented a Flask webserver that handles calculation of image statistics, For a given image we calculate the : min,max,mean,median and percentile values.
 
 ## Before starting Please make sure that you have
 * python
