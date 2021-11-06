@@ -6,7 +6,7 @@ Created on Thu Nov  4 16:26:55 2021
 """
 
 
-import STATISTICS_FUNCTION as imgstatistics
+import Statistics_Function as imgstatistics
 from flask import Flask,render_template
 from PIL import Image,ImageOps
 import requests
@@ -65,7 +65,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     
   #  start_time = time.time()
       
-      ##checking if IMAGE_FILE_NAME and FUNC_NAME already exists in the dict ,(multiple identical requests)
+      ##Checking if IMAGE_FILE_NAME and FUNC_NAME already exists in the dict ,(multiple identical requests)
     if IMAGE_FILE_NAME in multipleRequestsDict.keys():
         if FUNC_NAME in multipleRequestsDict[IMAGE_FILE_NAME].keys():
          #   elapsed_time = time.time() - start_time
@@ -93,7 +93,6 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
       #  print("elapsed time: "+str(elapsed_time))
           ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,min_value,func_describtion)
-
         return render_template('statistics_result.html',func=FUNC_NAME,img_url=URL,img_name=IMAGE_FILE_NAME, value=min_value,describtion=func_describtion)
     
     
@@ -104,7 +103,6 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
       #  print("elapsed time: "+str(elapsed_time))
         ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,max_value,func_describtion)
-        
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=max_value,describtion=func_describtion)
 
     elif FUNC_NAME =='mean':
@@ -114,8 +112,6 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
       #  print("elapsed time: "+str(elapsed_time))
         ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Mean_value,func_describtion)
-
-       
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Mean_value,describtion=func_describtion)
 
     elif FUNC_NAME =='median':
@@ -125,8 +121,6 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
        # print("elapsed time: "+str(elapsed_time))
         ## Filling the dict for multiple identical requests
         FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,Median_value,func_describtion)
-
-        
         return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=Median_value,describtion=func_describtion)
 
     ## checking pXXX where XXX is a percentile between 0...100
@@ -138,7 +132,6 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
          #   print("elapsed time: "+str(elapsed_time))
             ## Filling the dict for multiple identical requests
             FillingDict(IMAGE_FILE_NAME,FUNC_NAME,URL,percentile,func_describtion)
-
             return render_template('statistics_result.html',func=FUNC_NAME ,img_url=URL,img_name=IMAGE_FILE_NAME, value=percentile,describtion=func_describtion)
 
         # The percentile must be between 0..100 
