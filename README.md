@@ -149,6 +149,11 @@ If we have a multiple identical requests (same image and same function) I make i
 by saving a Dictionary that stores all the previous supported requests . so 
 when the user request a supported service (after checking IMG_FILE_NAME  and FUNC_NAMES ) I check first if the specific image and function are stored in my Dictionary ; if so I return the stored data without the need to calculate it  again. 
 
+Here is the result of mulitple requests for FUNC_NAME = min and IMAGE_FILE_NAME = IMG_X.jpg (where X between 1...6) and then we try IMG_1.jpg one more.
+
+<img src="images/multipleRequests.PNG" width="500" height="300" alt="some_text">  
+
+We can see the advantage of the method that we used above - so, when we have a multiple request the time it took untill the result is less than the time it takes for the first request .  
 
 
 

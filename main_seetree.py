@@ -67,7 +67,7 @@ def get_Statics(IMAGE_FILE_NAME,FUNC_NAME):
     if IMAGE_FILE_NAME in multipleRequestsDict.keys():
         if FUNC_NAME in multipleRequestsDict[IMAGE_FILE_NAME].keys():
          #   elapsed_time = time.time() - start_time
-          #  print("multuply request: "+str(elapsed_time))
+          #  print("multiple request: "+str(elapsed_time))
             return render_template('statistics_result.html',func=FUNC_NAME,img_url=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["img_url"],img_name=IMAGE_FILE_NAME, value=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["value"],describtion=multipleRequestsDict[IMAGE_FILE_NAME][FUNC_NAME]["describtion"])
 
 
