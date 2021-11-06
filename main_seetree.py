@@ -13,12 +13,10 @@ import requests
 #import time
 
 
-
-app = Flask(__name__)
-
 multipleRequestsDict={}
 
 
+app = Flask(__name__)
 
 
 #### https://stackoverflow.com/questions/10543940/check-if-a-url-to-an-image-is-up-and-exists-in-python
